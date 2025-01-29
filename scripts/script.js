@@ -1,4 +1,4 @@
-let credits = 200;
+let credits = 20000;
 let wins = 0;
 const symbols = 7;
 
@@ -10,6 +10,8 @@ const reelElements = [
 
 const spinBtn = document.getElementById("spin-btn");
 const jackpotElement = document.getElementById("jackpot");
+const jackpot2Element = document.getElementById("jackpot2");
+const jackpot3Element = document.getElementById("jackpot3");
 
 // Inicializar los carretes con imágenes
 function initializeReels() {
@@ -25,19 +27,19 @@ function initializeReels() {
   });
 }
 
-
 // Girar los carretes
 async function spin() {
-
   if (credits < 10) {
     alert("¡No tienes suficientes créditos!");
     return;
   }
 
-  credits -= 10;
+  credits -= 1000;
   updateUI();
   spinBtn.disabled = true;
   jackpotElement.style.display = "none";
+  jackpot2Element.style.display = "none";
+  jackpot3Element.style.display = "none";
 
   // Generar resultados aleatorios
   const results = Array.from(
@@ -50,7 +52,6 @@ async function spin() {
     reelElements.map(
       (reel, index) =>
         new Promise((resolve) => {
-          
           const targetPosition = (results[index] - 1) * -100;
 
           // Dentro de la Promise.all
@@ -59,8 +60,6 @@ async function spin() {
 
           // Resetear posición después de la animación
           setTimeout(() => {
-
-            
             reel.style.transition = "none";
             // const resetPosition = targetPosition + 700; // Ajuste para posición final
             reel.style.transform = `translateY(${targetPosition}px)`;
@@ -72,9 +71,22 @@ async function spin() {
 
   // Verificar ganador
   if (results[0] === results[1] && results[1] === results[2]) {
-    credits += 250;
+    premio = Math.floor(Math.random() * 3) + 1;
+    console.log(premio);
+    if (premio == 1) {
+      credits += 25000;
+      jackpotElement.style.display = "block";
+    } else if (premio == 2) {
+      credits += 50000;
+      jackpot2Element.style.display = "block";
+    } else if (premio == 3) {
+      credits += 75000;
+      jackpot3Element.style.display = "block";
+    }
+    
+
     wins++;
-    jackpotElement.style.display = "block";
+    
     document.querySelector(".game-container").classList.add("win-animation");
     setTimeout(() => {
       document
