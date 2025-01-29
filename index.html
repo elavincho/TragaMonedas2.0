@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tragamonedas 2.0</title>
+    <link rel="stylesheet" href="/style/styles.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>🎰 TRAGAMONEDAS 🎰</h1>
+
+        <div class="stats">
+            <div>Créditos: <span id="credits">100</span></div>
+            <div>Victorias: <span id="wins">0</span></div>
+        </div>
+
+        <div class="slots-container">
+            <div class="slot">
+                <div class="slot-inner" id="reel1"></div>
+            </div>
+            <div class="slot">
+                <div class="slot-inner" id="reel2"></div>
+            </div>
+            <div class="slot">
+                <div class="slot-inner" id="reel3"></div>
+            </div>
+        </div>
+
+        <div class="jackpot" id="jackpot">¡JACKPOT! 🎉 +250 créditos</div>
+
+        <div class="controls">
+            <button id="spin-btn" onclick="spin()">Girar! (10 créditos)</button>
+        </div>
+    </div>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
