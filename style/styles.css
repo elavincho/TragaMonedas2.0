@@ -4,205 +4,440 @@
     --win-color: #00d257ce;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #222121;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
+
+
+@media (min-width: 480px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #222121;
+        height: 90vh;
+        margin: 0;
+        padding: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .title-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .title {
+        color: #0052f7bd;
+        text-shadow: 0 3px rgba(240, 243, 245, 0.374);
+    }
+
+    .title-img {
+        width: 250px;
+        height: 100px;
+    }
+
+    .stats {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        font-size: 18px;
+        color: var(--main-color);
+    }
+
+    .game-container {
+        width: 300px;
+        height: 580px;
+        background-image: url("/images/fondo1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(247, 242, 242, 0.5);
+        text-align: center;
+        justify-content: center;
+    }
+
+    .slots-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 2rem 0;
+        perspective: 1000px;
+    }
+
+    .slot {
+        width: 100px;
+        height: 100px;
+        border: 3px solid var(--main-color);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        background: #fff;
+        transform-style: preserve-3d;
+    }
+
+    .slot-inner {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        /* 7 imágenes * 100px cada una */
+        transition: transform 5s;
+        /*velocidad de la animación*/
+    }
+
+    .slot img {
+        width: 100%;
+        height: 100px;
+        /* Altura fija igual al slot */
+        object-fit: contain;
+        background: #fff;
+        display: block;
+        /* Eliminar espacios entre imágenes */
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        border-radius: 50%;
+
+    }
+
+    button {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        /* border-radius: 25px; */
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        width: 100px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #spin-btn {
+        background: var(--accent-color);
+        color: white;
+    }
+
+    #spin-btn:disabled {
+        background: #95a5a6;
+        cursor: not-allowed;
+    }
+
+    .win-animation {
+        animation: winBlink 5s infinite;
+    }
+
+    @keyframes winBlink {
+        0% {
+            background-color: normal;
+        }
+
+        50% {
+            background-color: var(--win-color);
+        }
+
+        100% {
+            background-color: normal;
+        }
+    }
+
+
+
+    .jackpot {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+        color: var(--win-color);
+        margin: 20px 0;
+        display: none;
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-shadow: 10px 15px 5px #f2ecec;
+    }
+
+    .jackpot2 {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+        color: var(--win-color);
+        margin: 20px 0;
+        display: none;
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-shadow: 10px 15px 5px #f2ecec;
+    }
+
+    .jackpot3 {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+        color: var(--win-color);
+        color: #e47b7b;
+        margin: 20px 0;
+        display: none;
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-shadow: 10px 15px 5px #f2ecec;
+    }
+
+    .credits {
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .wins {
+        font-size: 25px;
+        color: #fff;
+        font-family: 'Arial Narrow Bold', sans-serif;
+    }
+
 }
 
-.title-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 50px;
-    justify-content: center;
-    margin-top: 60px;
-}
-.title {
-    color: #0052f7bd;
-    text-shadow: 0 3px rgba(240, 243, 245, 0.374);
-}
+/* Modo Celular */
+@media (max-width: 480px) {
 
-.title-img {
-    width: 250px;
-    height: 100px;
-}
-.stats {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    font-size: 18px;
-    color: var(--main-color);
-}
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+    }
 
-.game-container {
-    /* display: flex;
-    flex-wrap: wrap; */
-    width: 300px;
-    height: 580px;
-    /* background: white; */
-    background-image: url("/images/fondo1.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(247, 242, 242, 0.5);
-    text-align: center;
-    justify-content: center;
-}
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        /* background: #222121; */
+        background-color: #222121;
+        /* height: 100vh; */
+        width: 100vw;
+        margin: 0;
+        /* padding: 20px; */
+        font-family: 'Arial', sans-serif;
+        background-image: url("/images/fondo1.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 
-.slots-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 2rem 0;
-    perspective: 1000px;
-}
+    /* Estilos generales */
 
-.slot {
-    width: 100px;
-    height: 100px;
-    border: 3px solid var(--main-color);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    background: #fff;
-    transform-style: preserve-3d;
-}
 
-.slot-inner {
-    position: absolute;
-    width: 100%;
-    height: 700px;
-    /* 7 imágenes * 100px cada una */
-    transition: transform 5s;
-    /*velocidad de la animación*/
-}
+    .game-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ocupa el 100% del viewport height */
+        width: 100vw; /* Ocupa el 100% del viewport width */
+        padding: 0;
+        margin: 0;
+    }
 
-.slot img {
-    width: 100%;
-    height: 100px;
-    /* Altura fija igual al slot */
-    object-fit: contain;
-    background: #fff;
-    display: block;
-    /* Eliminar espacios entre imágenes */
-}
+    .title-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        margin-top: 60px;
+    }
 
-.controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0px;
-    border-radius: 50%;
+    .title {
+        color: #0052f7bd;
+        text-shadow: 0 3px rgba(240, 243, 245, 0.374);
+    }
+
+    .title-img {
+        width: 250px;
+        height: 100px;
+    }
+
+    .stats {
+        display: flex;
+        flex-wrap: wrap;
+        width: 250px;
+        height: auto;
+        margin-top: 10px;
+        font-size: 18px;
+        color: var(--main-color);
+        justify-content: center;
+        align-items: center;
+    }
+
     
-}
 
-button {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    /* border-radius: 25px; */
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    width: 100px;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-}
-
-#spin-btn {
-    background: var(--accent-color);
-    color: white;
-}
-
-#spin-btn:disabled {
-    background: #95a5a6;
-    cursor: not-allowed;
-}
-
-.win-animation {
-    animation: winBlink 5s infinite;
-}
-
-@keyframes winBlink {
-    0% {
-        background-color: normal;
+    .slots-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 2rem 0;
+        perspective: 1000px;
     }
 
-    50% {
-        background-color: var(--win-color);
+    .slot {
+        width: 100px;
+        height: 100px;
+        border: 3px solid var(--main-color);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        background: #fff;
+        transform-style: preserve-3d;
     }
 
-    100% {
-        background-color: normal;
+    .slot-inner {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+        /* 7 imágenes * 100px cada una */
+        transition: transform 5s;
+        /*velocidad de la animación*/
     }
-}
+
+    .slot img {
+        width: 100%;
+        height: 100px;
+        /* Altura fija igual al slot */
+        object-fit: contain;
+        background: #fff;
+        display: block;
+        /* Eliminar espacios entre imágenes */
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        border-radius: 50%;
+
+    }
+
+    button {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        /* border-radius: 25px; */
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        width: 100px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #spin-btn {
+        background: var(--accent-color);
+        color: white;
+    }
+
+    #spin-btn:disabled {
+        background: #95a5a6;
+        cursor: not-allowed;
+    }
+
+    .win-animation {
+        animation: winBlink 5s infinite;
+    }
+
+    @keyframes winBlink {
+        0% {
+            background-color: normal;
+        }
+
+        50% {
+            background-color: var(--win-color);
+        }
+
+        100% {
+            background-color: normal;
+        }
+    }
 
 
 
-.jackpot {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 24px;
-    color: var(--win-color);
-    margin: 20px 0;
-    display: none;
-    font-size: 50px;
-    color: #fff;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    text-shadow: 10px 15px 5px #f2ecec;
-}
+    .jackpot {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+        color: var(--win-color);
+        margin: 20px 0;
+        display: none;
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-shadow: 10px 15px 5px #f2ecec;
+    }
 
-.jackpot2 {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 24px;
-    color: var(--win-color);
-    margin: 20px 0;
-    display: none;
-    font-size: 50px;
-    color: #fff;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    text-shadow: 10px 15px 5px #f2ecec;
-}
+    .jackpot2 {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+        color: var(--win-color);
+        margin: 20px 0;
+        display: none;
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-shadow: 10px 15px 5px #f2ecec;
+    }
 
-.jackpot3 {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 24px;
-    color: var(--win-color);
-    color: #e47b7b;
-    margin: 20px 0;
-    display: none;
-    font-size: 50px;
-    color: #fff;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    text-shadow: 10px 15px 5px #f2ecec;
-}
+    .jackpot3 {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 24px;
+        color: var(--win-color);
+        color: #e47b7b;
+        margin: 20px 0;
+        display: none;
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-shadow: 10px 15px 5px #f2ecec;
+    }
 
-.credits {
-    font-size: 50px;
-    color: #fff;
-    font-family: Georgia, Times, 'Times New Roman', serif;
-}
+    .credits {
+        font-size: 50px;
+        color: #fff;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+    }
 
-.wins {
-    font-size: 25px;
-    color: #fff;
-    font-family: 'Arial Narrow Bold', sans-serif;
+    .wins {
+        font-size: 25px;
+        color: #fff;
+        font-family: 'Arial Narrow Bold', sans-serif;
+    }
+
+    
+
+  
 }
