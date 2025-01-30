@@ -1,7 +1,7 @@
 :root {
     --main-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --win-color: #27ae60;
+    --accent-color: #db1e09b4;
+    --win-color: #00d257ce;
 }
 
 body {
@@ -15,11 +15,20 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+.title-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+}
 .title {
-    color: #fff;
+    color: #0052f7bd;
+    text-shadow: 0 3px rgba(2, 156, 246, 0.374);
 }
 
 .game-container {
+    display: flex;
+    flex-wrap: wrap;
     width: 300px;
     height: 580px;
     /* background: white; */
@@ -28,13 +37,16 @@ body {
     background-size: contain;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(229, 221, 221, 0.1);
+    box-shadow: 0 0 20px rgba(247, 242, 242, 0.5);
     text-align: center;
+    justify-content: center;
 }
 
 .slots-container {
     display: flex;
-    gap: 15px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* gap: 15px; */
     margin: 2rem 0;
     perspective: 1000px;
 }
@@ -118,7 +130,7 @@ button {
 }
 
 .stats {
-    margin-top: 20px;
+    /* margin-top: 10px; */
     font-size: 18px;
     color: var(--main-color);
 }
