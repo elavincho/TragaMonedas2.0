@@ -9,12 +9,14 @@
 
 <body>
     <div class="game-container">
-        <h1>🎰 TRAGAMONEDAS 🎰</h1>
+        <br><br><br>
+        <h2 class="title">TRAGAMONEDAS</h2>
 
         <div class="stats">
-            <div>Créditos: <span id="credits">20000</span></div>
-            <div>Victorias: <span id="wins">0</span></div>
+            <div class="credits">$ <span class="credits" id="credits">20000</span></div>
         </div>
+
+        <br>
 
         <div class="slots-container">
             <div class="slot">
@@ -31,11 +33,18 @@
         <div class="jackpot" id="jackpot">¡JACKPOT! 🎉 +25000 créditos</div>
         <div class="jackpot2" id="jackpot2">¡JACKPOT! 🎉 +50000 créditos</div>
         <div class="jackpot3" id="jackpot3">¡JACKPOT! 🎉 +75000 créditos</div>
-        
+
+        <br>
 
         <div class="controls">
             <button id="spin-btn" onclick="spin()">Girar! (1000 créditos)</button>
         </div>
+
+        <div class="stats">
+            <div class="wins">Victorias: <span class="wins" id="wins">0</span></div>
+        </div>
+
+
     </div>
 
     <script src="/scripts/script.js"></script>

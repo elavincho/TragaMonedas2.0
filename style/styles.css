@@ -8,18 +8,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f0f0f0;
+    background: #222121;
     min-height: 100vh;
     margin: 0;
     padding: 20px;
     font-family: 'Arial', sans-serif;
 }
 
+.title {
+    color: #fff;
+}
+
 .game-container {
-    background: white;
+    width: 300px;
+    height: 580px;
+    /* background: white; */
+    background-image: url("/images/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(229, 221, 221, 0.1);
     text-align: center;
 }
 
@@ -62,8 +71,10 @@ body {
 
 .controls {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -131,4 +142,17 @@ button {
     color: var(--win-color);
     margin: 20px 0;
     display: none;
+}
+
+.credits {
+    font-size: 50px;
+    color: #fff;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+.wins {
+    font-size: 25px;
+    color: #fff;
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
