@@ -18,17 +18,31 @@ body {
 .title-container {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    height: 50px;
     justify-content: center;
     margin-top: 60px;
 }
 .title {
     color: #0052f7bd;
-    text-shadow: 0 3px rgba(2, 156, 246, 0.374);
+    text-shadow: 0 3px rgba(240, 243, 245, 0.374);
+}
+
+.title-img {
+    width: 250px;
+    height: 100px;
+}
+.stats {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    font-size: 18px;
+    color: var(--main-color);
 }
 
 .game-container {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     width: 300px;
     height: 580px;
     /* background: white; */
@@ -46,7 +60,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    /* gap: 15px; */
+    gap: 15px;
     margin: 2rem 0;
     perspective: 1000px;
 }
@@ -67,7 +81,7 @@ body {
     width: 100%;
     height: 700px;
     /* 7 imágenes * 100px cada una */
-    transition: transform 5s ;
+    transition: transform 5s;
     /*velocidad de la animación*/
 }
 
@@ -87,18 +101,28 @@ body {
     gap: 15px;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0px;
+    border-radius: 50%;
+    
 }
 
 button {
+    display: flex;
+    flex-wrap: wrap;
     padding: 12px 25px;
     font-size: 16px;
     border: none;
-    border-radius: 25px;
+    /* border-radius: 25px; */
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s;
     text-transform: uppercase;
+    font-family: Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
 #spin-btn {
@@ -129,38 +153,52 @@ button {
     }
 }
 
-.stats {
-    /* margin-top: 10px; */
-    font-size: 18px;
-    color: var(--main-color);
-}
+
 
 .jackpot {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 24px;
     color: var(--win-color);
     margin: 20px 0;
     display: none;
+    font-size: 50px;
+    color: #fff;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 10px 15px 5px #f2ecec;
 }
 
 .jackpot2 {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 24px;
     color: var(--win-color);
     margin: 20px 0;
     display: none;
+    font-size: 50px;
+    color: #fff;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 10px 15px 5px #f2ecec;
 }
 
 .jackpot3 {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 24px;
     color: var(--win-color);
+    color: #e47b7b;
     margin: 20px 0;
     display: none;
+    font-size: 50px;
+    color: #fff;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 10px 15px 5px #f2ecec;
 }
 
 .credits {
     font-size: 50px;
     color: #fff;
     font-family: Georgia, Times, 'Times New Roman', serif;
-    
 }
 
 .wins {
