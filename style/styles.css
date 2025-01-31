@@ -389,7 +389,7 @@
     }
 
     .win-animation {
-        animation: winBlink 5s infinite;
+        animation: winBlink 10s;
     }
 
     @keyframes winBlink {

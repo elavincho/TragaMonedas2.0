@@ -16,6 +16,11 @@ const jackpot3Element = document.getElementById("jackpot3");
 const addMoneyElement = document.getElementById("addMoney");
 const spinBtnElement = document.getElementById("spin-btn");
 
+// Sonidos
+const audioSpin = new Audio("sounds/spin.mp3");
+const audioWin = new Audio("sounds/win.mp3");
+const audioAddMoney = new Audio("sounds/addMoney.mp3");
+
 // Inicializar los carretes con imágenes
 function initializeReels() {
   reelElements.forEach((reel) => {
@@ -31,18 +36,17 @@ function initializeReels() {
 }
 
 // Agregar Dinero
-async function addMoney() {
-  
+function addMoney() {
   if (credits == 0) {
     spinBtnElement.style.display = "flex";
     addMoneyElement.style.display = "none";
     credits += 20000;
     wins = 0;
     plays = 0;
+    audioAddMoney.play();
     updateUI();
     return;
   }
-  
 }
 
 // Girar los carretes
@@ -56,6 +60,7 @@ async function spin() {
 
   credits -= 1000;
   plays += 1;
+  audioSpin.play();
   updateUI();
   spinBtn.disabled = true;
   jackpotElement.style.display = "none";
@@ -95,42 +100,38 @@ async function spin() {
     premio = Math.floor(Math.random() * 3) + 1;
     console.log(premio);
     if (premio == 1) {
+      audioWin.play();
       credits += 25000;
       jackpotElement.style.display = "block";
     } else if (premio == 2) {
+      audioWin.play();
       credits += 50000;
       jackpot2Element.style.display = "block";
     } else if (premio == 3) {
+      audioWin.play();
       credits += 75000;
       jackpot3Element.style.display = "block";
     }
-    
 
     wins++;
-    
+
     document.querySelector(".game-container").classList.add("win-animation");
     setTimeout(() => {
       document
         .querySelector(".game-container")
         .classList.remove("win-animation");
-    }, 1000);
+    }, 3000);
   }
 
   updateUI();
   spinBtn.disabled = false;
 }
 
-
-
 function updateUI() {
   document.getElementById("credits").textContent = credits;
   document.getElementById("wins").textContent = wins;
   document.getElementById("plays").textContent = plays;
 }
-
-// Sonidos (descomenta y añade tus archivos de sonido)
-/*const audioSpin = new Audio('spin-sound.mp3');
-        const audioWin = new Audio('win-sound.mp3');*/
 
 initializeReels();
 
