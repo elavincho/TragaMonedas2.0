@@ -21,6 +21,11 @@ const audioSpin = new Audio("sounds/spin.mp3");
 const audioWin = new Audio("sounds/win.mp3");
 const audioAddMoney = new Audio("sounds/addMoney.mp3");
 
+//const soundAmbient = new Audio("sounds/ambient.mp3");
+
+//soundAmbient.play();
+//soundAmbient.currentTime = 0; //Reinicia el sonido
+
 // Inicializar los carretes con imágenes
 function initializeReels() {
   reelElements.forEach((reel) => {
@@ -44,6 +49,7 @@ function addMoney() {
     wins = 0;
     plays = 0;
     audioAddMoney.play();
+    
     updateUI();
     return;
   }
