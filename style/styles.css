@@ -110,7 +110,7 @@
     }
 
     button {
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         padding: 12px 25px;
         font-size: 16px;
@@ -210,6 +210,27 @@
         font-family: 'Arial Narrow Bold', sans-serif;
     }
 
+    .addMoney {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 12px 25px;
+        margin-top: 10px;
+        font-size: 12px;
+        color: #fff;
+        background-color: rgba(60, 118, 2, 0.777);
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        width: 100px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 /* Modo Celular */
@@ -247,8 +268,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Ocupa el 100% del viewport height */
-        width: 100vw; /* Ocupa el 100% del viewport width */
+        height: 100vh;
+        /* Ocupa el 100% del viewport height */
+        width: 100vw;
+        /* Ocupa el 100% del viewport width */
         padding: 0;
         margin: 0;
     }
@@ -284,7 +307,7 @@
         align-items: center;
     }
 
-    
+
 
     .slots-container {
         display: flex;
@@ -426,7 +449,7 @@
     }
 
     .credits {
-        
+
         font-size: 50px;
         color: #fff;
         font-family: Georgia, Times, 'Times New Roman', serif;
@@ -449,7 +472,6 @@
         background-color: rgba(60, 118, 2, 0.777);
         border: none;
         border-radius: 25px;
-        /* border-radius: 50%; */
         cursor: pointer;
         transition: all 0.3s;
         text-transform: uppercase;
@@ -459,8 +481,5 @@
         height: 100px;
         justify-content: center;
         align-items: center;
-
     }
-
-  
 }
