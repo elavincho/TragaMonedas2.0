@@ -1,6 +1,7 @@
-let credits = 20000;
+let credits = 0;
 let wins = 0;
 const symbols = 7;
+let plays = 0;
 
 const reelElements = [
   document.getElementById("reel1"),
@@ -12,6 +13,8 @@ const spinBtn = document.getElementById("spin-btn");
 const jackpotElement = document.getElementById("jackpot");
 const jackpot2Element = document.getElementById("jackpot2");
 const jackpot3Element = document.getElementById("jackpot3");
+const addMoneyElement = document.getElementById("addMoney");
+const spinBtnElement = document.getElementById("spin-btn");
 
 // Inicializar los carretes con imágenes
 function initializeReels() {
@@ -27,20 +30,36 @@ function initializeReels() {
   });
 }
 
+// Agregar Dinero
+async function addMoney() {
+  
+  if (credits == 0) {
+    spinBtnElement.style.display = "flex";
+    addMoneyElement.style.display = "none";
+    credits += 20000;
+    updateUI();
+    return;
+  }
+  
+}
+
 // Girar los carretes
 async function spin() {
-  if (credits < 10) {
-    alert("¡No tienes suficientes créditos!");
+  if (credits < 1000) {
+    spinBtnElement.style.display = "none";
+    addMoneyElement.style.display = "flex";
+    //alert("¡No tienes suficientes créditos!");
     return;
   }
 
   credits -= 1000;
+  plays += 1;
   updateUI();
   spinBtn.disabled = true;
   jackpotElement.style.display = "none";
   jackpot2Element.style.display = "none";
   jackpot3Element.style.display = "none";
-
+  addMoneyElement.style.display = "none";
   // Generar resultados aleatorios
   const results = Array.from(
     { length: 3 },
@@ -99,9 +118,12 @@ async function spin() {
   spinBtn.disabled = false;
 }
 
+
+
 function updateUI() {
   document.getElementById("credits").textContent = credits;
   document.getElementById("wins").textContent = wins;
+  document.getElementById("plays").textContent = plays;
 }
 
 // Sonidos (descomenta y añade tus archivos de sonido)

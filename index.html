@@ -18,9 +18,7 @@
         </div>
 
         <div class="stats">
-            <div class="credits">$<span class="credits" id="credits">20000</span></div>
-            <br>
-            <div class="wins">Victorias: <span class="wins" id="wins">0</span></div>
+            <div class="credits">$<span class="credits" id="credits">0</span></div>
         </div>
 
         <div class="slots-container">
@@ -34,18 +32,27 @@
                 <div class="slot-inner" id="reel3"></div>
             </div>
         </div>
-
         <div class="jackpot" id="jackpot">+ $25000</div>
         <div class="jackpot2" id="jackpot2">+ $50000</div>
         <div class="jackpot3" id="jackpot3">+ $75000</div>
-
+        
         <div class="controls">
             <button id="spin-btn" onclick="spin()">¡Girar! $1000</button>
+            <button class="addMoney" id="addMoney" onclick="addMoney()">¡Agregar! $20000</button>
         </div>
-
+       
+        <div class="stats">
+            <div class="wins">Jugadas: <span class="plays" id="plays">0</span></div>
+        </div>
+        
+        <div class="stats">
+            <div class="wins">Victorias: <span class="wins" id="wins">0</span></div>
+        </div>
+       
     </div>
-
+    
     <script src="/scripts/script.js"></script>
+    
 </body>
 
 </html>
