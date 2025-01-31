@@ -37,6 +37,8 @@ async function addMoney() {
     spinBtnElement.style.display = "flex";
     addMoneyElement.style.display = "none";
     credits += 20000;
+    wins = 0;
+    plays = 0;
     updateUI();
     return;
   }
