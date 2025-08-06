@@ -17,7 +17,7 @@ En este proyecto realicé un **tragamonedas** utilizando javascript.
   
 ## Objetivo del Proyecto
 
-Este proyecto tiene la finalidad de crear un un tragamonedas que tenga las siguientes caracteristicas:
+Este proyecto tiene la finalidad de crear un tragamonedas que tenga las siguientes caracteristicas:
 
 - Agregar fichas para comenzar el juego
 - Slot con 3 imagenes
