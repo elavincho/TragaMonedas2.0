@@ -35,5 +35,5 @@ Este proyecto tiene la finalidad de crear un tragamonedas que tenga las siguient
 
 ## Video del proyecto
 
-[![Video tutorial](https://github.com/elavincho/ACCreaciones2.0/blob/master/assets/img_proyecto/ing_video.png)](https://youtu.be/BDLIg_sSFqw)
+[![Video tutorial](https://github.com/elavincho/ACCreaciones2.0/blob/master/assets/img_proyecto/ing_video.png)](https://youtube.com/shorts/xcUt8pG5viA?feature=share)
 
