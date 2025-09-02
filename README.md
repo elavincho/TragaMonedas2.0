@@ -1,3 +1,5 @@
+<img src="https://github.com/elavincho/PrevioClubDeportivo/blob/master/img/ifts29Logo.png" width="80" height="80" alt="img"/>
+
 # Tragamonedas
 
 En este proyecto realicé un **tragamonedas** utilizando JavaScript.
