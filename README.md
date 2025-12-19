@@ -37,5 +37,3 @@ Este proyecto tiene la finalidad de crear un tragamonedas que tenga las siguient
 
 [![Video tutorial](https://github.com/elavincho/TragaMonedas2.0/blob/master/images/img_video.png)](https://youtube.com/shorts/xcUt8pG5viA?feature=share)
 
-
-
