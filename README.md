@@ -1,4 +1,4 @@
-<img src="https://github.com/elavincho/TragaMonedas2.0/blob/master/images/favicon.ico" width="120" height="120" alt="img"/>
+<img src="https://github.com/elavincho/TragaMonedas2.0/blob/master/images/favicon.ico" width="120" height="120" alt="img-777"/>
 
 # Tragamonedas
 
